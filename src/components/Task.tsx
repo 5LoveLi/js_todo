@@ -1,17 +1,34 @@
-import React from 'react';
+import { TaskData } from '../type/Task.types';
 import './Task.css';
 
 interface ITaskProps {
-    status: boolean,
-    name: string,
-    id: string,
+  task: TaskData,
+  onChange: (task: TaskData) => void,
+  onClick: (task: TaskData) => void,
 }
 
-export const Task = ({ status, name, id }: ITaskProps) => {
-    return (<>
+
+
+export const Task = ({ task, onChange, onClick }: ITaskProps) => {
+  const { id, name, status } = task;
+
+  const toggleChecked = () => {
+    onChange({
+      ...task,
+      status: !task.status
+    })
+  }
+
+  const deleteTask = () => {
+    onClick({
+      ...task
+    })
+  }
+
+  return (<>
     <div>
-        <input type='checkbox' id={id} checked={status}/>{name}
+      <input type='checkbox' id={id} checked={status} onChange={toggleChecked} />{name}<button onClick={deleteTask} />
     </div>
-    </>
-    )
+  </>
+  )
 }
