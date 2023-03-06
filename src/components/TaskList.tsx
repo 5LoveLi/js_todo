@@ -37,11 +37,23 @@ export const TaskList = (props: any) => {
     })
   }
 
-  const filter = (status: boolean) => {
+  const filter = (status: number) => {
     console.log('hi')
-    setTasks(previousState => {
-      return previousState.filter(t => t.status === status)
-    })
+    if (status === 0) {
+      setTasks(previousState => ([...previousState]))
+    } else if (status === 1) {
+      setTasks(previousState => {
+        return previousState.filter(t => t.status === true)
+      })
+    }
+    else {
+      setTasks(previousState => {
+        return previousState.filter(t => t.status === false)
+      })
+    }
+    // setTasks(previousState => {
+    //   return previousState.filter(t => t.status === true)
+    // })
   }
 
   return (

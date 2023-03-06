@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Task } from './components/Task';
+
+import { FormTask } from './components/Form';
 import { TaskList } from './components/TaskList';
 
 function App() {
   return (
     <div className="App">
-      <TaskList/>
+      {/* <FormTask /> */}
+      <TaskList />
     </div>
   );
 }

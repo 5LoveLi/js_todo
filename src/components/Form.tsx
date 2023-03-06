@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TaskData } from '../type/Task.types';
-import { TaskList } from './TaskList';
+// import { TaskList } from './TaskList';
 
 interface IFormTaskProps {
   onCreate: (task: TaskData) => void;
@@ -12,7 +12,7 @@ export const FormTask = ({ onCreate }: IFormTaskProps) => {
   const createTask = (event: any) => {
     event.preventDefault();
     const task = {
-      id: new Date().toDateString(),
+      id: new Date().toString(),
       name: inputTask,
       status: false,
     };
