@@ -1,22 +1,22 @@
 
 
 interface IFooterProps {
-  onClick: (status: number) => void,
+  onFilterTasks: (status: string) => void
 }
 
-export const Footer = ({ onClick }: IFooterProps) => {
+export const Footer = ({ onFilterTasks }: IFooterProps) => {
 
   const all = () => {
-    onClick(0)
+    onFilterTasks('all')
 
   }
 
   const completed = () => {
-    onClick(1)
+    onFilterTasks('completed')
   }
 
   const active = () => {
-    onClick(2)
+    onFilterTasks('active')
   }
 
   return (

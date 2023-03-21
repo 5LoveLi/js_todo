@@ -1,4 +1,4 @@
-import { TaskData } from '../type/Task.types';
+import { TaskData } from '../../type/Task.types';
 import './Task.css';
 
 interface ITaskProps {

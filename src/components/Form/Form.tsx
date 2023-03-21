@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TaskData } from '../type/Task.types';
+import { TaskData } from '../../type/Task.types';
 // import { TaskList } from './TaskList';
 
 interface IFormTaskProps {
@@ -17,10 +17,11 @@ export const FormTask = ({ onCreate }: IFormTaskProps) => {
       status: false,
     };
     onCreate(task);
+    setInputTask('');
   }
 
   const updateInputValue = (evt: any) => {
-    console.log(evt.target.value)
+    // console.log(evt.target.value)
     setInputTask(evt.target.value);
   }
 
